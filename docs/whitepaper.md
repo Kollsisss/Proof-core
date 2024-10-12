@@ -23,255 +23,388 @@
 
 ## 1. Introduction
 
-Proof Blockchain represents a paradigm shift in blockchain technology, offering a unique three-layer architecture designed to address the fundamental challenges of scalability, security, and privacy. This document provides an in-depth exploration of the Proof Blockchain architecture, detailing its components, interactions, and the innovative solutions it brings to the blockchain space.
+Proof Blockchain represents a paradigm shift in blockchain technology, offering a unique three-layer architecture designed to address the fundamental challenges of scalability, security, and privacy. This innovative approach separates concerns and optimizes each layer for its specific function, resulting in a blockchain ecosystem that is not only technically superior but also user-friendly and adaptable to a wide range of applications.
 
 Our architecture is built on three primary layers:
-- Layer 1 (ZZ Protocol): The foundational layer ensuring security and data integrity.
-- Layer 2 (XX/YY Protocols): The performance layer, handling high-throughput operations and smart contract execution.
-- Layer 3 (ZK-Rollups): The privacy and ultra-fast processing layer, leveraging zero-knowledge proofs for enhanced scalability and confidentiality.
 
-Each layer is meticulously designed to work in harmony, creating a blockchain ecosystem that is not only technically superior but also user-friendly and adaptable to a wide range of applications.
+1. **Layer 1 (ZZ Protocol)**: The foundational layer ensuring security and managing legal contract hashes. It interacts with an off-chain storage system for encrypted client data.
+
+2. **Layer 2 (XX/YY Protocols)**: The performance and consensus layer, handling high-throughput operations, smart contract execution, and implementing the consensus mechanism.
+
+3. **Layer 3 (ZK-Rollups)**: The privacy and ultra-fast processing layer, leveraging zero-knowledge proofs for enhanced scalability and confidentiality.
+
+Each layer is meticulously designed to work in harmony, creating a blockchain ecosystem that addresses the limitations of traditional blockchain architectures.
+
+```
+   +-----------------------------------+
+   |    Layer 3: ZK-Rollups            |
+   | (Privacy & Ultra-Fast Processing) |
+   +-----------------------------------+
+                   |
+                   v
+   +-----------------------------------+
+   |    Layer 2: XX/YY Protocols       |
+   | (Consensus & Performance)         |
+   +-----------------------------------+
+                   |
+                   v
+   +-----------------------------------+
+   |    Layer 1: ZZ Protocol           |
+   | (Security & Legal Contract Mgmt)  |
+   +-----------------------------------+
+               |         |
+               v         v
+   +----------------+  +----------------+
+   |  Blockchain    |  |   Off-Chain    |
+   |    Storage     |  |    Storage     |
+   +----------------+  +----------------+
+```
+
+Key features of Proof Blockchain include:
+
+1. **Enhanced Security**: Layer 1 focuses on securing the network and managing legal contract hashes, providing a robust foundation for the entire system.
+
+2. **Efficient Consensus**: By moving the consensus mechanism to Layer 2, we achieve higher throughput and faster finality without compromising security.
+
+3. **Privacy-Preserving Transactions**: Layer 3's ZK-Rollups enable private, high-speed transactions while maintaining the overall transparency of the blockchain.
+
+4. **Legal Contract Integration**: The system is designed to handle legal contracts, with hashes stored on-chain and encrypted content secured off-chain, bridging the gap between blockchain technology and legal requirements.
+
+5. **Scalability**: The separation of concerns across layers allows for unprecedented scalability, potentially handling millions of transactions per second.
+
+6. **Interoperability**: Built-in protocols for cross-chain communication facilitate seamless interaction with other blockchain networks and traditional systems.
+
+7. **Developer-Friendly**: Comprehensive SDKs, intuitive APIs, and powerful development tools make it easy for developers to build on Proof Blockchain.
+
+In the following sections, we will delve deeper into each component of the Proof Blockchain architecture, exploring how this innovative design overcomes the limitations of traditional blockchain systems and opens up new possibilities for decentralized applications.
 
 ## 2. Overview of Three-Layer Architecture
 
-The Proof Blockchain's three-layer architecture is designed to separate concerns and optimize for specific aspects of blockchain technology:
+The Proof Blockchain's three-layer architecture is a revolutionary approach to blockchain design, separating concerns and optimizing each layer for its specific function. This design addresses the traditional blockchain trilemma of scalability, security, and decentralization by delegating different aspects of these challenges to specialized layers.
 
 ```
-   +------------------------+
-   |    Layer 3: ZK-Rollups |
-   |  (Privacy & Speed)     |
-   +------------------------+
-              |
-              v
-   +------------------------+
-   |   Layer 2: XX/YY       |
-   |  (Performance)         |
-   +------------------------+
-              |
-              v
-   +------------------------+
-   |    Layer 1: ZZ         |
-   |  (Security & Consensus)|
-   +------------------------+
+   +-----------------------------------+
+   |    Layer 3: ZK-Rollups            |
+   | - Privacy                         |
+   | - Ultra-fast transaction processing|
+   | - Scalability enhancement         |
+   +-----------------------------------+
+                   |
+                   v
+   +-----------------------------------+
+   |    Layer 2: XX/YY Protocols       |
+   | - Consensus mechanism             |
+   | - Smart contract execution        |
+   | - High-throughput operations      |
+   +-----------------------------------+
+                   |
+                   v
+   +-----------------------------------+
+   |    Layer 1: ZZ Protocol           |
+   | - Network security                |
+   | - Legal contract hash storage     |
+   | - Interaction with off-chain data |
+   +-----------------------------------+
+               |         |
+               v         v
+   +----------------+  +----------------+
+   |  Blockchain    |  |   Off-Chain    |
+   |    Storage     |  |    Storage     |
+   +----------------+  +----------------+
 ```
 
-This layered approach allows us to:
+## Layer 1: ZZ Protocol
+
+The foundational layer of Proof Blockchain, ZZ Protocol, is designed with a primary focus on security and the management of legal contract hashes. Unlike traditional Layer 1 protocols, it does not handle consensus or transaction validation, allowing it to optimize for its core functions:
+
+1. **Network Security**: Implements advanced cryptographic techniques and network-level security measures to protect the entire blockchain ecosystem.
+
+2. **Legal Contract Hash Storage**: Stores cryptographic hashes of legal contracts, providing an immutable reference point for off-chain legal documents.
+
+3. **Off-Chain Data Interface**: Manages interactions with the off-chain storage system, where encrypted client data and full contract details are securely stored.
+
+## Layer 2: XX/YY Protocols
+
+The middle layer of Proof Blockchain is where the bulk of the network's operations occur. It's split into two main protocols:
+
+1. **XX Protocol**:
+   - Implements the consensus mechanism for the entire network.
+   - Handles high-throughput operations and transaction processing.
+   - Manages the execution environment for smart contracts.
+
+2. **YY Protocol**:
+   - Facilitates cross-chain interactions and interoperability.
+   - Manages integration with other blockchain networks and traditional financial systems.
+
+## Layer 3: ZK-Rollups
+
+The top layer of Proof Blockchain leverages zero-knowledge rollups to provide unparalleled transaction speed and enhanced privacy:
+
+1. **Privacy Preservation**: Utilizes zero-knowledge proofs to enable private transactions while maintaining verifiability.
+
+2. **Ultra-Fast Processing**: Aggregates multiple transactions into batches, dramatically increasing the overall throughput of the system.
+
+3. **Scalability Solution**: Offloads computation from the main chain, allowing for significant scaling of network capacity.
+
+## Cross-Layer Interaction
+
+The three layers of Proof Blockchain work in concert to provide a seamless user experience:
+
+1. Layer 3 batches and compresses transactions, submitting proofs to Layer 2.
+2. Layer 2 validates these proofs, executes smart contracts, and manages the overall state of the network.
+3. Layer 1 secures the network and provides an immutable anchor for legal contract hashes, interfacing with off-chain storage as necessary.
+
+This layered approach allows Proof Blockchain to:
 - Maintain a secure and decentralized base layer
 - Scale transaction throughput without compromising security
 - Implement privacy features without sacrificing transparency
 - Provide flexibility for future upgrades and improvements
+- Integrate legal contracts into the blockchain ecosystem in a compliant manner
 
-Each layer has its specific role and characteristics, which we will explore in detail in the following sections.
+In the following sections, we will explore each layer in detail, examining the protocols, mechanisms, and innovations that make Proof Blockchain a next-generation blockchain solution.
 
 ## 3. Layer 1 (ZZ Protocol): The Foundation
 
-Layer 1, implemented through the ZZ Protocol, forms the bedrock of the Proof Blockchain. It is responsible for maintaining the overall security, consensus, and integrity of the entire network.
+Layer 1 of Proof Blockchain, implemented through the ZZ Protocol, serves as the foundational security layer and the interface for legal contract management. Unlike traditional Layer 1 implementations, the ZZ Protocol does not handle consensus or transaction validation, allowing it to focus on providing robust security and efficient management of legal contract hashes.
 
-### Key Components:
+## Key Components:
 
 1. **Blockchain Structure**
-   - Block Time: Exactly 10 minutes
-   - Block Size: Dynamic, with a maximum size of 10MB
-   - Block Header: Contains previous block hash, timestamp, Merkle root of transactions, and validator signature
+   - Block Time: 10 minutes
+   - Block Content: Primarily security-related data and legal contract hashes
+   - Block Header: Contains previous block hash, timestamp, Merkle root of legal contract hashes, and security parameters
 
-2. **Consensus Mechanism**
-   - Type: Delegated Proof of Stake (DPoS)
-   - Validator Set: 101 active validators
-   - Validator Selection: Based on stake amount and community reputation
+2. **Security Mechanisms**
+   - Quantum-Resistant Cryptography: Implements post-quantum cryptographic algorithms to future-proof the network
+   - Advanced Access Controls: Utilizes a sophisticated system of Proof Keys for authenticated access to the network and off-chain data
 
-3. **Native Token: PROOF**
-   - Total Supply: 35,035,035 PROOF
-   - Use: Transaction fees, staking, and governance
+3. **Legal Contract Management**
+   - Hash Storage: Stores cryptographic hashes of legal contracts on-chain
+   - Off-Chain Interface: Manages secure interactions with off-chain storage where full contract details are encrypted and stored
 
-4. **State Management**
-   - World State Trie: Stores the current state of all accounts and contracts
-   - Transaction Trie: Stores all transactions within a block
-   - Receipt Trie: Stores the outcomes of all transactions
+4. **Network Protocol**
+   - P2P Network: Implements a robust peer-to-peer network for resilient communication
+   - Gossip Protocol: Efficient propagation of security updates and new legal contract hashes
 
-5. **Network Protocol**
-   - P2P Network: LibP2P-based peer discovery and communication
-   - Gossip Protocol: For efficient block and transaction propagation
+5. **Cryptographic Primitives**
+   - Digital Signatures: Quantum-resistant signature scheme for enhanced security
+   - Hash Function: Advanced hash function optimized for legal contract hashing and security operations
 
-6. **Cryptographic Primitives**
-   - Digital Signatures: ED25519 for transaction signing
-   - Hash Function: SHA-3 for block and transaction hashing
+## Detailed Process Flow:
 
-7. **Data Availability**
-   - Full nodes store the entire blockchain history
-   - Light clients can verify block headers and specific transactions
+1. **Legal Contract Submission**
+   a. User submits a legal contract through the approved interface
+   b. Contract is encrypted and stored in the off-chain storage system
+   c. A hash of the contract is generated and submitted to Layer 1
 
-8. **Access Logging**
-   - Records all data access attempts on-chain using Proof Keys
-   - Maintains a transparent, immutable log of data access
+2. **Block Production**
+   a. Every 10 minutes, a new block is created containing:
+      - New legal contract hashes
+      - Security parameter updates
+      - Cryptographic proofs of off-chain data integrity
+   b. The block is signed using the quantum-resistant signature scheme
 
-### Detailed Process Flow:
+3. **Network Propagation**
+   a. New blocks are propagated through the network using the gossip protocol
+   b. Nodes verify the integrity and authenticity of the block
 
-1. **Block Production**
-   a. The selected validator for the current 10-minute slot prepares a new block
-   b. Transactions are collected from the mempool and validated
-   c. The block is assembled, including the Merkle root of transactions and the current state root
-   d. The validator signs the block with their private key
+4. **Off-Chain Data Management**
+   a. Layer 1 maintains a secure index of off-chain data locations
+   b. Periodic integrity checks are performed on off-chain data
+   c. Access to off-chain data is managed through the Proof Key system
 
-2. **Block Propagation and Validation**
-   a. The new block is broadcast to the network
-   b. Other validators receive the block and verify:
-      - Block structure and size
-      - Transaction validity
-      - Merkle roots
-      - Producer's signature
-   c. If valid, validators add the block to their local chain and update their state
+5. **Security Updates**
+   a. Network-wide security parameters are updated as needed
+   b. Updates are included in blocks and propagated to all nodes
 
-3. **Finality**
-   a. A block is considered final when it has been confirmed by 2/3 + 1 of the active validator set
-   b. Finality is typically achieved within 30 seconds after block production
-
-4. **State Updates**
-   a. After each block, the world state trie is updated to reflect new account balances and contract states
-   b. The transaction and receipt tries are updated with new data
-
-5. **Access Logging**
-   a. When a data access request is made, it's first validated against the requester's permissions
-   b. If valid, a log entry is created containing:
-      - Requester's Proof Key
-      - Timestamp
-      - Resource identifier (e.g., contract address)
-   c. This log entry is included in the next block, creating an immutable record of the access attempt
-
-Example of an Access Log Entry:
+Example of a Legal Contract Hash Entry:
 ```json
 {
-  "proofKey": "0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385",
+  "contractHash": "0x7f9fade1c0d57a7af66ab4ead79fade1c0d57a7af66ab4ead7c2c2eb7b11a91385",
   "timestamp": 1615480320,
-  "resourceId": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-  "accessType": "read"
+  "submitter": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+  "offChainReference": "QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdw8eX9"
 }
 ```
 
-Layer 1 serves as the trust anchor for the entire system. Its robust consensus mechanism and transparent logging system ensure that all operations across the network can be verified and audited, providing a solid foundation for the higher layers to build upon.
+Layer 1 serves as the security backbone and legal interface for the entire Proof Blockchain system. By focusing on these critical aspects, it provides a solid foundation for the higher layers to build upon, ensuring the integrity, security, and legal compliance of the entire network.
+
+```
+   +-----------------------------------+
+   |    Layer 1: ZZ Protocol           |
+   +-----------------------------------+
+   |                                   |
+   |  +-----------------------------+  |
+   |  |    Security Mechanisms      |  |
+   |  +-----------------------------+  |
+   |                                   |
+   |  +-----------------------------+  |
+   |  | Legal Contract Hash Storage |  |
+   |  +-----------------------------+  |
+   |                                   |
+   |  +-----------------------------+  |
+   |  |  Off-Chain Data Interface   |  |
+   |  +-----------------------------+  |
+   |                                   |
+   +-----------------------------------+
+               |         |
+               v         v
+   +----------------+  +----------------+
+   |  Blockchain    |  |   Off-Chain    |
+   |    Storage     |  |    Storage     |
+   +----------------+  +----------------+
+```
+
+This architecture ensures that Layer 1 provides a secure and legally compliant foundation for the entire Proof Blockchain ecosystem, interfacing seamlessly with both on-chain and off-chain components.
 
 ## 4. Layer 2 (XX/YY Protocols): Performance and Scalability
 
-Layer 2 is the powerhouse of the Proof Blockchain, designed to handle high-throughput operations and complex computations. It is split into two main protocols: XX Protocol for general operations and smart contract execution, and YY Protocol for cross-chain interactions and altcoin integration.
+Layer 2 of Proof Blockchain is divided into two main protocols: XX Protocol for consensus and PROOF token management, and YY Protocol for smart contracts, altcoins, and decentralized applications (dApps).
 
-### XX Protocol
+## XX Protocol
 
-The XX Protocol is responsible for processing the majority of transactions and executing smart contracts. It achieves high performance through advanced sharding techniques and optimized execution environments.
+The XX Protocol forms the backbone of Layer 2, managing the consensus mechanism and the native PROOF token.
 
-#### Key Components:
+### Key Components:
 
-1. **Sharding**
-   - Number of Shards: Dynamic, starting with 16 and scalable up to 256
-   - Shard Assignment: Based on account addresses (last 8 bits)
-   - Cross-Shard Transactions: Handled through an atomic commit protocol
+1. **Consensus Mechanism**
+   - Type: Delegated Proof of Stake (DPoS) with Practical Byzantine Fault Tolerance (PBFT)
+   - Validator Set: 101 active validators
+   - Block Time: 0.5 seconds
 
-2. **Execution Environment**
-   - Virtual Machine: WebAssembly (Wasm)-based for efficient contract execution
-   - State Channels: For off-chain computations with on-chain settlements
+2. **PROOF Token Management**
+   - Native token of the Proof Blockchain ecosystem
+   - Used for transaction fees, staking, and governance
+   - Implements advanced tokenomics for ecosystem sustainability
 
-3. **Smart Contract Support**
-   - Languages: Rust, AssemblyScript
-   - Compiler: Specialized compiler that optimizes for gas efficiency and security
+3. **Transaction Processing for PROOF**
+   - High-throughput processing for PROOF token transactions
+   - Sharding: Dynamic, starting with 16 and scalable up to 256 shards
+   - Cross-Shard Transactions: Atomic commit protocol for PROOF transfers across shards
 
-4. **Transaction Processing**
-   - Throughput: Up to 100,000 TPS across all shards
-   - Latency: Average confirmation time of 1-2 seconds
-
-#### Process Flow:
+### Process Flow:
 
 1. **Transaction Submission**
-   a. User submits a transaction to the network
+   a. User submits a PROOF token transaction to the network
    b. Transaction is routed to the appropriate shard based on the sender's address
 
-2. **Shard Processing**
-   a. Validators in the shard validate and execute the transaction
+2. **Consensus Round**
+   a. Validators collect PROOF transactions into a block
+   b. A leader is selected for the round using a deterministic algorithm
+   c. The leader proposes the block to other validators
+   d. Validators reach consensus using PBFT
+
+3. **Block Execution**
+   a. Once consensus is reached, PROOF transactions in the block are executed
    b. State changes are recorded in the shard's state trie
 
-3. **Cross-Shard Communication**
-   a. For transactions involving multiple shards, an atomic commit protocol is used
+4. **Cross-Shard Communication**
+   a. For PROOF transactions involving multiple shards, an atomic commit protocol is used
    b. Involved shards prepare the transaction and vote on its validity
    c. If all shards agree, the transaction is committed; otherwise, it's rolled back
 
-4. **Block Production**
-   a. Each shard produces micro-blocks every 0.5 seconds
-   b. Micro-blocks are aggregated into a macro-block every 10 seconds
-
 5. **State Sync with Layer 1**
-   a. Every 10 minutes, coinciding with Layer 1's block time, a summary of Layer 2 state is committed to Layer 1
+   a. Every 10 minutes, a summary of Layer 2 state is committed to Layer 1
    b. This summary includes Merkle roots of each shard's state and a list of cross-shard transaction results
 
-Example of a Cross-Shard Transaction:
-```json
-{
-  "txHash": "0x3a1b2c...",
-  "from": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e", // Shard 14
-  "to": "0x8f1d3A2347c63f7Ab74e9315455D2b2E75a2d448",   // Shard 8
-  "value": "10.5 PROOF",
-  "shards": [14, 8],
-  "status": "committed"
-}
-```
+## YY Protocol
 
-### YY Protocol
+The YY Protocol extends the functionality of Proof Blockchain, handling smart contracts, altcoins, and decentralized applications.
 
-The YY Protocol extends the capabilities of Proof Blockchain to interact with other blockchain networks and integrate various cryptocurrencies.
+### Key Components:
 
-#### Key Components:
+1. **Smart Contract Execution**
+   - Virtual Machine: WebAssembly (Wasm)-based for efficient contract execution
+   - Support for multiple programming languages (e.g., Rust, AssemblyScript)
+   - Gas model for resource allocation and fee calculation
 
-1. **Bridge Contracts**
-   - Ethereum Bridge: For interoperability with Ethereum and ERC-20 tokens
-   - Bitcoin Bridge: For Bitcoin wrapping and transactions
+2. **Altcoin Management**
+   - Native support for multiple altcoins within the Proof Blockchain ecosystem
+   - Dynamic creation and management of new altcoins
+   - Altcoin-specific validation rules
 
-2. **Liquidity Pools**
+3. **Decentralized Applications (dApps)**
+   - Platform for deploying and running dApps
+   - Integration with smart contracts and altcoins
+
+4. **Cross-Chain Interoperability**
+   - Bridge contracts for major blockchain networks (e.g., Ethereum, Bitcoin)
+   - Protocol for wrapping external assets as tokens on Proof Blockchain
+
+5. **Liquidity Pools and DEX**
    - Automated Market Maker (AMM) for efficient token swaps
-   - Yield farming and liquidity mining mechanisms
+   - Liquidity provision and yield farming mechanisms
 
-3. **Wrapped Assets**
-   - Representation of external assets (e.g., WBTC, WETH) on Proof Blockchain
+### Process Flow:
 
-4. **Cross-Chain Validation**
-   - Light clients of connected blockchains for transaction verification
-   - Threshold signature schemes for secure multi-party computation
+1. **Smart Contract Deployment**
+   a. Developer submits a smart contract to the YY Protocol
+   b. Contract is compiled and deployed to the appropriate shard
 
-#### Process Flow:
+2. **Altcoin Transaction**
+   a. User initiates an altcoin transaction
+   b. Transaction is validated according to the specific altcoin's rules
+   c. State is updated in the altcoin's dedicated storage
 
-1. **Asset Bridging**
+3. **Cross-Chain Transaction**
    a. User locks assets in the origin chain's bridge contract
    b. YY Protocol validators confirm the lock on the origin chain
    c. Equivalent wrapped assets are minted on Proof Blockchain
 
-2. **Cross-Chain Transactions**
-   a. User initiates a transaction involving a bridged asset
-   b. YY Protocol processes the transaction on Proof Blockchain
-   c. Corresponding action is taken on the origin chain (e.g., release of locked funds)
+4. **dApp Interaction**
+   a. User interacts with a dApp through its interface
+   b. dApp calls relevant smart contracts on the YY Protocol
+   c. Smart contracts execute, potentially involving altcoin transfers or other operations
 
-3. **Liquidity Provision**
-   a. Users can provide liquidity to AMM pools
-   b. Liquidity providers earn fees and yield farming rewards
-
-Example of a Bridging Transaction:
-```json
-{
-  "originChain": "Ethereum",
-  "originTxHash": "0x1a2b3c...",
-  "asset": "ETH",
-  "amount": "5.0",
-  "proofAddress": "0x9d8A62f656a8d1615C1294fd71e9CFb3E4855A4F",
-  "wrappedAsset": "WETH",
-  "bridgeContract": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
-}
+```
+   +-----------------------------------+
+   |    Layer 2: XX/YY Protocols       |
+   +-----------------------------------+
+   |                                   |
+   |  +-----------------------------+  |
+   |  |        XX Protocol          |  |
+   |  |                             |  |
+   |  |  +----------------------+   |  |
+   |  |  |  Consensus (DPoS)    |   |  |
+   |  |  +----------------------+   |  |
+   |  |                             |  |
+   |  |  +----------------------+   |  |
+   |  |  |  PROOF Token Mgmt    |   |  |
+   |  |  +----------------------+   |  |
+   |  |                             |  |
+   |  +-----------------------------+  |
+   |                                   |
+   |  +-----------------------------+  |
+   |  |        YY Protocol          |  |
+   |  |                             |  |
+   |  |  +----------------------+   |  |
+   |  |  |  Smart Contracts     |   |  |
+   |  |  +----------------------+   |  |
+   |  |                             |  |
+   |  |  +----------------------+   |  |
+   |  |  |  Altcoin Management  |   |  |
+   |  |  +----------------------+   |  |
+   |  |                             |  |
+   |  |  +----------------------+   |  |
+   |  |  |  dApps & DEX         |   |  |
+   |  |  +----------------------+   |  |
+   |  |                             |  |
+   |  +-----------------------------+  |
+   |                                   |
+   +-----------------------------------+
 ```
 
-Layer 2, with its XX and YY Protocols, forms the high-performance backbone of Proof Blockchain. It enables complex operations, smart contract execution, and cross-chain interactions while maintaining the security guarantees provided by Layer 1.
+This updated structure of Layer 2 clearly separates the responsibilities of XX and YY Protocols. The XX Protocol focuses on consensus and management of the core PROOF token, while the YY Protocol handles the extended functionality including smart contracts, altcoins, and dApps, all built upon the foundation provided by the XX Protocol.
 
 ## 5. Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy
 
-Layer 3 of the Proof Blockchain leverages ZK-Rollups technology to provide unparalleled transaction speed and enhanced privacy. This layer is designed to handle a massive number of transactions off-chain while still benefiting from the security of the main chain.
+Layer 3 of the Proof Blockchain leverages ZK-Rollups technology to provide unparalleled transaction speed and enhanced privacy. This layer is designed to handle a massive number of transactions off-chain while still benefiting from the security and consensus mechanisms of the lower layers.
 
-### Key Components:
+## Key Components:
 
 1. **ZK-Rollup Structure**
    - Operator: Responsible for batching transactions and generating proofs
-   - Verifier Contract: Deployed on Layer 1, verifies validity proofs
+   - Verifier Contract: Deployed on Layer 2, verifies validity proofs
    - State Tree: Merkle tree representing the current state of all accounts in the rollup
 
 2. **Cryptographic Primitives**
@@ -279,15 +412,15 @@ Layer 3 of the Proof Blockchain leverages ZK-Rollups technology to provide unpar
    - Hash Function: Poseidon, optimized for zk-SNARKs
 
 3. **Transaction Types**
-   - Deposit: Move assets from Layer 1 to Layer 3
+   - Deposit: Move assets from Layer 2 to Layer 3
    - Transfer: Move assets between accounts within Layer 3
-   - Withdraw: Move assets from Layer 3 back to Layer 1
+   - Withdraw: Move assets from Layer 3 back to Layer 2
 
 4. **Privacy Features**
    - Transaction Amount Privacy: Amounts are hidden using Pedersen commitments
    - Address Privacy: Stealth addresses for enhanced anonymity
 
-### Detailed Process Flow:
+## Detailed Process Flow:
 
 1. **Transaction Submission**
    a. User creates a transaction and sends it to the rollup operator
@@ -304,38 +437,26 @@ Layer 3 of the Proof Blockchain leverages ZK-Rollups technology to provide unpar
       - The state transition from the old root to the new root is correct
    b. Proof generation is computationally intensive but fast to verify
 
-4. **Submission to Layer 1**
-   a. Operator submits to Layer 1:
+4. **Submission to Layer 2**
+   a. Operator submits to Layer 2:
       - New state root
       - zk-SNARK proof
       - Encrypted transaction data
 
 5. **Verification**
-   a. Layer 1 verifier contract checks the zk-SNARK proof
+   a. Layer 2 verifier contract checks the zk-SNARK proof
    b. If valid, the new state root is accepted
 
 6. **Finalization**
-   a. Once accepted on Layer 1, all transactions in the batch are considered final
+   a. Once accepted on Layer 2, all transactions in the batch are considered final
    b. Users can now use their updated balances for further transactions
 
 7. **Withdrawals**
    a. User initiates a withdrawal by sending a transaction to the operator
    b. Operator includes the withdrawal in a batch and provides a Merkle proof
-   c. User can then claim their funds on Layer 1 using this proof
+   c. User can then claim their funds on Layer 2 using this proof
 
-Example of a ZK-Rollup Batch:
-```json
-{
-  "batchId": 1234,
-  "oldStateRoot": "0x1a2b3c...",
-  "newStateRoot": "0x4d5e6f...",
-  "proof": "0x9a8b7c...",
-  "transactionsHash": "0x7a8b9c...",
-  "encryptedTransactions": "0x1d2e3f..."
-}
-```
-
-### Privacy Mechanisms:
+## Privacy Mechanisms:
 
 1. **Transaction Amount Privacy**
    - Uses Pedersen commitments to hide transaction amounts
@@ -350,184 +471,280 @@ Example of a ZK-Rollup Batch:
    - Allows verification of transactions without revealing their contents
    - Proves that a transaction is valid (sender has sufficient balance, etc.) without disclosing actual amounts or addresses
 
-Example of a Private Transaction:
-```json
-{
-  "from": "stealth_address_1",
-  "to": "stealth_address_2",
-  "amountCommitment": "0x2a3b4c...",
-  "nullifier": "0x5e6f7g...",
-  "proof": "0x8h9i0j..."
-}
+## Performance and Scalability:
+
+1. **Throughput**
+   - Theoretical Max TPS: 1,000,000+
+   - Practical TPS: 100,000 - 500,000 (accounting for proof generation time)
+
+2. **Latency**
+   - Transaction Inclusion in Batch: Near-instant
+   - Full Confirmation (after Layer 2 inclusion): ~1-2 seconds
+
+3. **Scalability Factors**
+   - Batch size can be dynamically adjusted based on network load
+   - Multiple operators can work in parallel to increase throughput
+
+```
+   +-----------------------------------+
+   |    Layer 3: ZK-Rollups            |
+   +-----------------------------------+
+   |                                   |
+   |  +-----------------------------+  |
+   |  |    Transaction Batching     |  |
+   |  +-----------------------------+  |
+   |                                   |
+   |  +-----------------------------+  |
+   |  |    zk-SNARK Proof Generation|  |
+   |  +-----------------------------+  |
+   |                                   |
+   |  +-----------------------------+  |
+   |  |    Privacy Mechanisms       |  |
+   |  +-----------------------------+  |
+   |                                   |
+   +-----------------------------------+
+                   |
+                   v
+   +-----------------------------------+
+   |    Layer 2: Verification         |
+   +-----------------------------------+
 ```
 
-Layer 3's ZK-Rollups provide a powerful combination of scalability and privacy. By processing thousands of transactions off-chain and submitting only compact proofs to Layer 1, it dramatically increases the overall throughput of the system while maintaining strong security guarantees.
+Layer 3's ZK-Rollups provide a powerful combination of scalability and privacy. By processing thousands of transactions off-chain and submitting only compact proofs to Layer 2, it dramatically increases the overall throughput of the system while maintaining strong privacy guarantees and benefiting from the security of the underlying layers.
 
 ## 6. Cross-Layer Interactions
 
-The seamless interaction between the three layers is crucial for the overall functionality and efficiency of Proof Blockchain. Here's how the layers interact:
+The seamless interaction between the three layers of Proof Blockchain is crucial for the overall functionality and efficiency of the network. Each layer has a specific role, and their interactions are designed to maximize security, scalability, and performance.
 
-### Layer 3 to Layer 2
+## Layer 3 to Layer 2 Interactions
 
 1. **Batch Submissions**
    - ZK-Rollup operators on Layer 3 submit transaction batches to Layer 2
-   - Layer 2 (XX Protocol) verifies the zk-SNARK proofs
+   - Layer 2 (YY Protocol) verifies the zk-SNARK proofs
 
 2. **State Updates**
    - Layer 2 updates its state based on the verified Layer 3 batches
-   - This includes updating account balances and contract states
+   - This includes updating account balances and smart contract states
 
-### Layer 2 to Layer 1
+3. **Withdrawal Requests**
+   - Users initiate withdrawals from Layer 3 to Layer 2
+   - Layer 2 processes these requests after verifying the associated proofs
+
+## Layer 2 to Layer 1 Interactions
 
 1. **State Commitments**
    - Every 10 minutes, Layer 2 submits a state commitment to Layer 1
    - This commitment includes:
-     * Merkle roots of each shard's state
+     * Merkle roots of XX and YY Protocol states
      * Summary of cross-shard transactions
      * Aggregate of Layer 3 state updates
 
-2. **Validator Rotation**
-   - Layer 1 manages the validator set for Layer 2
-   - Changes in staking on Layer 1 affect validator selection on Layer 2
+2. **Security Parameter Updates**
+   - Layer 1 provides updated security parameters to Layer 2
+   - These updates ensure that Layer 2 maintains alignment with the core security protocols
 
-### Layer 1 to Layer 2
+## Layer 1 to Layer 2 Interactions
 
 1. **Finality Confirmation**
    - Layer 1 provides final confirmation of state updates to Layer 2
    - This allows Layer 2 to safely prune old data
 
 2. **Governance Decisions**
-   - Protocol upgrades and major decisions made on Layer 1 are propagated to Layer 2
+   - Major protocol upgrades and governance decisions made on Layer 1 are propagated to Layer 2
 
-### Direct Layer 3 to Layer 1 Interactions
+## Direct Layer 3 to Layer 1 Interactions
 
-1. **Deposits and Withdrawals**
-   - Users can deposit funds directly from Layer 1 to Layer 3
-   - Withdrawals from Layer 3 to Layer 1 require a waiting period for security
-
-2. **Emergency Exits**
+1. **Emergency Exits**
    - In case of Layer 2 failures, users can exit directly from Layer 3 to Layer 1
+   - This is a safety mechanism to ensure funds are always accessible
 
-Example of a Cross-Layer Transaction Flow:
+2. **Audit Trails**
+   - Periodic audit trails of Layer 3 operations are committed to Layer 1 for long-term storage and verification
+
+## Cross-Layer Data Flow
+
 ```
-User initiates transaction on Layer 3
-  │
-  ▼
-Layer 3 processes transaction in a batch
-  │
-  ▼
-Layer 3 submits batch to Layer 2
-  │
-  ▼
-Layer 2 verifies and incorporates Layer 3 batch
-  │
-  ▼
-Layer 2 includes state update in its commitment to Layer 1
-  │
-  ▼
-Layer 1 finalizes the state update
-  │
-  ▼
-Confirmation propagated back to Layer 2 and Layer 3
+User Interaction
+      │
+      ▼
++-------------+
+|   Layer 3   | ◄─── Fast transactions and privacy
++-------------+
+      │
+      ▼
++-------------+
+|   Layer 2   | ◄─── Consensus and smart contracts
++-------------+
+      │
+      ▼
++-------------+
+|   Layer 1   | ◄─── Security and legal contract management
++-------------+
+      │
+      ▼
+  Off-chain
+   Storage
 ```
+
+This multi-layered approach allows Proof Blockchain to:
+- Maintain a secure and legally compliant base layer
+- Scale transaction throughput without compromising security
+- Implement privacy features without sacrificing transparency
+- Provide flexibility for future upgrades and improvements
+
+By carefully orchestrating these cross-layer interactions, Proof Blockchain achieves a balance of security, scalability, and functionality that surpasses traditional blockchain architectures.
 
 ## 7. Data Management and Privacy
 
-Proof Blockchain implements a sophisticated data management system that balances transparency with privacy:
+Proof Blockchain implements a sophisticated data management system that balances transparency with privacy, leveraging both on-chain and off-chain components to ensure security, efficiency, and compliance with data protection regulations.
 
-### Off-Chain Encrypted Data Storage
+## Off-Chain Encrypted Data Storage
 
 1. **Encryption**
    - All sensitive data is encrypted using AES-256 encryption
-   - Data is stored off-chain in a distributed storage system
+   - Data is stored off-chain in a distributed storage system (e.g., IPFS)
 
 2. **Access Control**
-   - Data access is managed through smart contracts
+   - Data access is managed through smart contracts on Layer 2 (YY Protocol)
    - Temporary access keys are issued with a 1-hour timeout
 
 3. **Key Management**
    - Users' encryption keys are managed through a secure key management system
    - Keys are never stored in plain text, only salted hashes are kept
 
-### On-Chain Access Logging
+## On-Chain Access Logging
 
 1. **Logging Mechanism**
-   - Every data access attempt is logged on-chain
+   - Every data access attempt is logged on Layer 1
    - Logs include the accessor's Proof Key, timestamp, and resource identifier
 
 2. **Transparency**
    - Access logs are public and can be audited by anyone
    - This creates accountability without compromising data privacy
 
-Example of an Access Log Entry:
-```json
-{
-  "accessorProofKey": "0x1a2b3c...",
-  "timestamp": 1634567890,
-  "resourceId": "0x4d5e6f...",
-  "accessType": "read"
-}
-```
-
-### Data Lifecycle
+## Data Lifecycle
 
 1. **Creation**
-   - Data is encrypted client-side before being sent to storage
-   - A reference to the data location is stored in the relevant smart contract
+   - Data is encrypted client-side before being sent to off-chain storage
+   - A reference to the data location is stored in the relevant smart contract on Layer 2
 
 2. **Storage**
-   - Encrypted data is stored in a distributed file system (e.g., IPFS)
+   - Encrypted data is stored in the distributed off-chain storage system
    - The storage system is decentralized to prevent single points of failure
 
 3. **Access**
    - When data access is requested, the smart contract issues a temporary access key
-   - The access attempt is immediately logged on-chain
+   - The access attempt is immediately logged on Layer 1
    - The user can decrypt and access the data for the duration of the key's validity
 
 4. **Deletion**
    - Data can be marked for deletion in the smart contract
    - The actual data removal from the distributed storage is handled by a garbage collection process
 
-### Privacy vs. Transparency Trade-offs
+## Privacy Mechanisms
 
-- Transaction amounts and participant identities on Layer 3 are private
+1. **Zero-Knowledge Proofs**
+   - Layer 3 uses zk-SNARKs to enable private transactions
+   - Proves transaction validity without revealing transaction details
+
+2. **Stealth Addresses**
+   - Users can generate one-time addresses for each transaction
+   - Enhances privacy by making it difficult to link multiple transactions to a single user
+
+3. **Confidential Transactions**
+   - Transaction amounts are hidden using Pedersen commitments
+   - Only the sender and receiver know the true transaction amount
+
+## Data Management Architecture
+
+```
++-------------------+    +-------------------+
+|   User Interface  |    |   Smart Contract  |
++-------------------+    +-------------------+
+          │                        │
+          ▼                        ▼
++-------------------+    +-------------------+
+| Encryption Layer  |    |   Access Control  |
++-------------------+    +-------------------+
+          │                        │
+          ▼                        ▼
++-------------------+    +-------------------+
+| Off-chain Storage |    | On-chain Logging  |
++-------------------+    +-------------------+
+```
+
+## Privacy vs. Transparency Trade-offs
+
+- Transaction details on Layer 3 are private
 - The fact that a transaction occurred is public, maintaining auditability
 - Smart contract logic on Layer 2 is public, but the data they operate on can be private
-- Layer 1 provides a public, verifiable history of state transitions without revealing the details
+- Layer 1 provides a public, verifiable history of access logs and state transitions
 
-This system ensures that Proof Blockchain can offer strong privacy guarantees while still maintaining the transparency and auditability that are crucial for a public blockchain.
+This comprehensive data management and privacy system ensures that Proof Blockchain can offer strong privacy guarantees while still maintaining the transparency and auditability crucial for a public blockchain. It also provides a flexible framework that can adapt to evolving data protection regulations and user privacy needs.
 
 ## 8. Security Measures
 
-Security is paramount in Proof Blockchain's design. Multiple layers of security measures are implemented across all three layers:
+Security is paramount in Proof Blockchain's design. Multiple layers of security measures are implemented across all three layers to ensure the integrity, confidentiality, and availability of the network and its data.
 
-### Cryptographic Security
+## Cryptographic Security
 
 1. **Quantum-Resistant Cryptography**
    - Implementation: Lattice-based cryptographic schemes
-   - Application: Used in all signature schemes and encryption methods
+   - Application: Used in all signature schemes and encryption methods across all layers
+   - Purpose: Future-proofing against potential quantum computing threats
 
 2. **Zero-Knowledge Proofs**
    - Type: zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Argument of Knowledge)
-   - Purpose: Validating transactions without disclosing details
+   - Purpose: Validating transactions and smart contract interactions without disclosing details
+   - Implementation: Primarily in Layer 3 for privacy-preserving transactions
 
-### Layer-Specific Security
+## Layer-Specific Security
 
-1. **Layer 1 (ZZ Protocol) Security**
-   - Consensus Security: Delegated Proof of Stake with slashing conditions
-   - Validator Rotation: Regular rotation of validator set to prevent centralization
-   - Long-Range Attack Prevention: Weak subjectivity checkpoints
+### Layer 1 (ZZ Protocol) Security
 
-2. **Layer 2 (XX/YY Protocols) Security**
-   - Fraud Proofs: Allows any party to challenge invalid state transitions
-   - Data Availability Checks: Ensures all data needed to reconstruct the state is available
-   - Cross-Shard Atomicity: Two-phase commit protocol for cross-shard transactions
+1. **Immutable Audit Trails**
+   - All access logs and critical operations are recorded on Layer 1
+   - Provides an unchangeable record for auditing and compliance purposes
 
-3. **Layer 3 (ZK-Rollups) Security**
-   - Validity Proofs: zk-SNARKs ensure that only valid state transitions are accepted
-   - Exit Games: Allows users to safely withdraw funds even if operators are malicious
+2. **Secure Off-Chain Data Management**
+   - Implements protocols for secure interaction with off-chain storage
+   - Regular integrity checks of off-chain data references
 
-### Network Security
+3. **Legal Contract Hash Verification**
+   - Stores and verifies hashes of legal contracts
+   - Ensures the integrity of legal agreements without exposing sensitive details
+
+### Layer 2 (XX/YY Protocols) Security
+
+1. **Consensus Security (XX Protocol)**
+   - Delegated Proof of Stake (DPoS) with slashing conditions
+   - Validator rotation to prevent centralization
+   - Economic incentives aligned with network security
+
+2. **Smart Contract Security (YY Protocol)**
+   - Formal verification of critical smart contracts
+   - Automated and manual audits of contract code
+   - Sandbox execution environment to isolate potentially malicious contracts
+
+3. **Cross-Shard Transaction Security**
+   - Atomic commit protocol for cross-shard transactions
+   - Ensures consistency across shards even in the presence of network partitions
+
+### Layer 3 (ZK-Rollups) Security
+
+1. **Validity Proofs**
+   - zk-SNARKs ensure that only valid state transitions are accepted
+   - Proofs are verified on Layer 2 before state updates are committed
+
+2. **Data Availability Checks**
+   - Ensures all data needed to reconstruct the state is available
+   - Prevents operators from withholding critical information
+
+3. **Exit Games**
+   - Allows users to safely withdraw funds even if operators are malicious
+   - Provides a trustless escape hatch in case of Layer 3 failures
+
+## Network Security
 
 1. **DDoS Protection**
    - Implementation: Traffic filtering and rate limiting at the network edge
@@ -535,162 +752,213 @@ Security is paramount in Proof Blockchain's design. Multiple layers of security 
 
 2. **Secure Communication**
    - All node-to-node communication is encrypted using TLS 1.3
-   - Perfect Forward Secrecy ensures past communications remain secure
+   - Perfect Forward Secrecy ensures past communications remain secure even if keys are compromised
 
-### Smart Contract Security
+3. **Firewall and Intrusion Detection Systems**
+   - Advanced firewalls to control network traffic
+   - Real-time intrusion detection and prevention systems
 
-1. **Formal Verification**
-   - Critical smart contracts are formally verified using tools like Coq or Isabelle
-   - This mathematically proves the correctness of the contract's logic
-
-2. **Automated Auditing**
-   - Continuous automated audits using tools like Mythril and Slither
-   - Regular manual audits by third-party security firms
-
-3. **Upgrade Mechanisms**
-   - Proxy patterns allow for upgrading contracts while preserving state
-   - Time-locked upgrades with community governance for critical contracts
-
-### Operational Security
+## Operational Security
 
 1. **Multi-Signature Wallets**
    - All critical operations require multiple signatures
    - Hardware security modules (HSMs) are used for key storage
 
-2. **Bug Bounty Program**
-   - Ongoing bug bounty program with significant rewards for critical vulnerabilities
+2. **Regular Security Audits**
+   - Periodic third-party security audits of all system components
+   - Continuous internal security assessments and penetration testing
 
-Example of a Security Incident Response Flow:
+3. **Incident Response Plan**
+   - Comprehensive plan for responding to potential security incidents
+   - Regular drills to ensure readiness
+
+4. **Bug Bounty Program**
+   - Ongoing bug bounty program with significant rewards for critical vulnerability discoveries
+   - Encourages responsible disclosure from the security research community
+
+## Security Architecture Overview
+
 ```
-Incident Detected
-  │
-  ▼
-Immediate Triage
-  │
-  ▼
-Activate Incident Response Team
-  │
-  ▼
-Assess Impact and Contain
-  │
-  ▼
-Investigate Root Cause
-  │
-  ▼
-Develop and Apply Fix
-  │
-  ▼
-Verify Fix and Restore Systems
-  │
-  ▼
-Post-Incident Review and Report
++-----------------------------------------------------+
+|                 Quantum-Resistant Cryptography      |
++-----------------------------------------------------+
+                           │
+        ┌───────────────────────────────────────┐
+        │                   │                   │
++---------------+   +---------------+   +---------------+
+|    Layer 3    |   |    Layer 2    |   |    Layer 1    |
+| ZK-Rollups    |   | XX/YY Protocols|   | ZZ Protocol   |
++---------------+   +---------------+   +---------------+
+| • Validity    |   | • Consensus   |   | • Immutable   |
+|   Proofs      |   |   Security    |   |   Audit Trails|
+| • Privacy     |   | • Smart       |   | • Off-Chain   |
+|   Mechanisms  |   |   Contract    |   |   Data Mgmt   |
+|               |   |   Security    |   | • Legal       |
+|               |   |               |   |   Contract    |
+|               |   |               |   |   Verification|
++---------------+   +---------------+   +---------------+
+        │                   │                   │
+        └───────────────────────────────────────┘
+                           │
++-----------------------------------------------------+
+|            Network and Operational Security         |
++-----------------------------------------------------+
 ```
 
-These comprehensive security measures ensure that Proof Blockchain remains resilient against a wide range of potential threats, from cryptographic attacks to operational vulnerabilities.
+This comprehensive security framework ensures that Proof Blockchain remains resilient against a wide range of potential threats, from cryptographic attacks to operational vulnerabilities. By implementing security measures at every level of the architecture, Proof Blockchain provides a robust and trustworthy platform for decentralized applications and digital asset management.
 
 ## 9. Consensus Mechanism
 
-Proof Blockchain employs a hybrid consensus mechanism that leverages the strengths of different approaches across its layers:
+Proof Blockchain employs a sophisticated consensus mechanism primarily implemented in Layer 2 (XX Protocol). This mechanism is designed to ensure fast finality, high throughput, and strong security guarantees while maintaining decentralization.
 
-### Layer 1: Delegated Proof of Stake (DPoS)
+## Overview
 
-1. **Validator Set**
-   - Size: 101 active validators
-   - Selection: Based on stake amount and community reputation
+- **Type**: Delegated Proof of Stake (DPoS) with Practical Byzantine Fault Tolerance (PBFT)
+- **Location**: Implemented in Layer 2 (XX Protocol)
+- **Validator Set**: 101 active validators
+- **Block Time**: 0.5 seconds
 
-2. **Staking**
-   - Minimum Stake: 10,000 PROOF tokens
-   - Staking Period: 21 days minimum with a 7-day unbonding period
+## Key Components
 
-3. **Block Production**
-   - Round Robin: Each validator takes turns producing blocks
-   - Block Time: 10 minutes
+### 1. Validator Selection and Staking
 
-4. **Finality**
-   - Type: Probabilistic, then Absolute
-   - Time to Finality: 5 blocks (50 minutes) for practical finality, 50 blocks (500 minutes) for absolute finality
+- Validators are selected based on the amount of PROOF tokens staked
+- Minimum stake requirement: 100,000 PROOF tokens
+- Staking period: 28 days with a 7-day unbonding period
+- Validator reputation system influences selection probability
 
-5. **Slashing Conditions**
-   - Double Signing: 5% of staked amount
-   - Downtime: 1% of staked amount per hour of inactivity
+### 2. Block Production
 
-### Layer 2: Practical Byzantine Fault Tolerance (PBFT)
+- Round-robin block production among the active validator set
+- Each validator has a 0.5-second window to produce a block
+- If a validator fails to produce a block, the next in line takes over
 
-1. **Consensus Groups**
-   - Each shard has its own consensus group
-   - Group Size: 21 validators per shard
+### 3. PBFT Consensus
 
-2. **Block Production**
-   - Micro-blocks: Produced every 0.5 seconds
-   - Macro-blocks: Aggregation of micro-blocks every 10 seconds
+- Three-phase commit process: Pre-prepare, Prepare, and Commit
+- Requires 2f + 1 votes to reach consensus, where f is the maximum number of faulty nodes (33 in a set of 101 validators)
 
-3. **Finality**
-   - Instant finality within each shard
-   - Cross-shard finality achieved through atomic commit protocol
+### 4. Finality
 
-4. **Validator Rotation**
+- Blocks are considered final after receiving commits from 2/3 + 1 of validators
+- Typical time to finality: 1-2 seconds
+
+### 5. Sharding
+
+- Network is divided into multiple shards for parallel processing
+- Each shard has its own set of validators
+- Cross-shard transactions use an atomic commit protocol
+
+## Consensus Flow
+
+1. **Block Proposal**
+   - The designated validator for the current time slot proposes a new block
+   - Block includes transactions from the mempool and any cross-shard transaction results
+
+2. **Pre-prepare Phase**
+   - The block proposer broadcasts the block to all other validators
+   - Includes the block and the proposer's signature
+
+3. **Prepare Phase**
+   - Validators verify the block and broadcast prepare messages
+   - A prepare message indicates the validator has accepted the block
+
+4. **Commit Phase**
+   - Once a validator receives 2f + 1 prepare messages, it broadcasts a commit message
+   - The commit message includes the validator's signature on the block
+
+5. **Finalization**
+   - When a validator receives 2f + 1 commit messages, the block is considered final
+   - The finalized block is added to the blockchain
+
+6. **State Update**
+   - Validators update their local state based on the transactions in the finalized block
+   - Cross-shard transaction results are propagated to other shards
+
+## Incentives and Penalties
+
+1. **Block Rewards**
+   - Block proposers receive a reward for each successfully produced and finalized block
+   - Validators receive a portion of transaction fees for participating in consensus
+
+2. **Slashing Conditions**
+   - Validators can be slashed (lose a portion of their stake) for malicious behavior:
+     - Double signing: 5% of staked amount
+     - Downtime: 1% of staked amount per hour of inactivity beyond a threshold
+
+3. **Validator Rotation**
    - Validators are rotated between shards every 24 hours
-   - Rotation is pseudo-random based on Layer 1 block hash
+   - Rotation is pseudo-random based on a seed derived from Layer 1 block hash
 
-### Layer 3: ZK-Rollup Validity Proofs
+## Cross-Shard Consensus
 
-1. **Operator Selection**
-   - Multiple operators can submit batches
-   - Selection based on gas price bid and historical performance
+1. **Atomic Commit Protocol**
+   - Used for transactions that span multiple shards
+   - Two-phase commit ensures consistency across shards
 
-2. **Batch Processing**
-   - Operators collect transactions and create batches
-   - zk-SNARK proofs are generated for each batch
+2. **Inter-Shard Communication**
+   - Dedicated nodes serve as bridges between shards
+   - Use a gossip protocol for efficient message propagation
 
-3. **Verification**
-   - Proofs are verified on Layer 2
-   - Successful verification results in state update
+## Consensus Mechanism Diagram
 
-4. **Finality**
-   - Achieved once the batch is included and verified on Layer 2
-   - Further secured when Layer 2 state is committed to Layer 1
-
-Example of Consensus Flow:
 ```
-Layer 3:
-Transaction Batch Created → zk-SNARK Proof Generated
-              │
-              ▼
-Layer 2:
-Proof Verified → State Updated → Cross-Shard Consensus (if needed)
-              │
-              ▼
-Layer 1:
-State Commitment Included → Finality Achieved after 50 blocks
+┌────────────────────────────────────────────────────┐
+│                  Validator Pool                    │
+│  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐     ┌──────┐  │
+│  │  V1  │ │  V2  │ │  V3  │ │  V4  │ ... │ V101 │  │
+│  └──────┘ └──────┘ └──────┘ └──────┘     └──────┘  │
+└────────────────────────┬───────────────────────────┘
+                         │
+                         ▼
+┌────────────────────────────────────────────────────┐
+│                 Consensus Process                  │
+│                                                    │
+│  ┌──────────┐   ┌──────────┐   ┌──────────┐        │
+│  │  Block   │   │ Prepare  │   │  Commit  │        │
+│  │ Proposal │ ──▶│  Phase   │ ──▶│  Phase   │        │
+│  └──────────┘   └──────────┘   └──────────┘        │
+│         │             │              │             │
+│         └─────────────┴──────────────┘             │
+│                      │                             │
+│                      ▼                             │
+│             ┌──────────────────┐                   │
+│             │   Finalization   │                   │
+│             └──────────────────┘                   │
+└────────────────────────────────────────────────────┘
 ```
 
-This hybrid approach allows Proof Blockchain to achieve high throughput and low latency on Layer 2 and Layer 3, while maintaining strong security guarantees through the DPoS consensus on Layer 1.
+This consensus mechanism ensures that Proof Blockchain can achieve high throughput and low latency while maintaining strong security guarantees. By implementing the consensus in Layer 2, it allows for more flexibility and scalability compared to traditional Layer 1 consensus mechanisms.
 
 ## 10. Smart Contracts and Execution
 
-Proof Blockchain provides a robust and flexible environment for smart contract development and execution:
+Proof Blockchain provides a robust and flexible environment for smart contract development and execution, primarily implemented in Layer 2 (YY Protocol). This system is designed to support complex decentralized applications while maintaining high performance and security.
 
-### Smart Contract Languages
+## Smart Contract Languages
 
 1. **Rust**
    - Primary language for smart contract development
    - Provides safety and performance benefits
+   - Compiles to WebAssembly for execution
 
 2. **AssemblyScript**
    - TypeScript-like syntax compiled to WebAssembly
    - Easier entry point for JavaScript developers
+   - Suitable for less complex contracts
 
-### Execution Environment
+## Execution Environment
 
 1. **WebAssembly (Wasm) Virtual Machine**
    - Efficient and portable bytecode format
    - Sandboxed execution environment for security
+   - Near-native performance for contract execution
 
 2. **Gas Model**
    - Pay-per-instruction model similar to Ethereum
    - Gas prices dynamically adjusted based on network load
+   - Prevents infinite loops and resource abuse
 
-### Contract Deployment Process
+## Contract Deployment Process
 
 1. **Compilation**
    - Contracts are compiled to Wasm bytecode
@@ -698,41 +966,100 @@ Proof Blockchain provides a robust and flexible environment for smart contract d
 
 2. **Deployment Transaction**
    - Bytecode and metadata are included in a deployment transaction
-   - Transaction is processed on Layer 2 (XX Protocol)
+   - Transaction is processed on Layer 2 (YY Protocol)
 
 3. **Verification**
    - Deployed bytecode is verified against the source code
-   - Verification results are publicly available
+   - Verification results are publicly available for transparency
 
-### Interoperability Features
+## Smart Contract Features
 
-1. **Cross-Contract Calls**
+1. **State Management**
+   - Contracts can read and write to their own state
+   - State is stored in a Patricia Merkle Trie for efficient updates and proofs
+
+2. **Cross-Contract Calls**
    - Contracts can call other contracts within the same shard
    - Cross-shard contract calls are supported with additional latency
 
-2. **Precompiles**
+3. **Event Emission**
+   - Contracts can emit events for external systems to observe
+   - Events are stored in bloom filters for efficient querying
+
+4. **Precompiles**
    - Efficient implementations of common cryptographic operations
    - Includes elliptic curve operations, hashing functions, etc.
 
-3. **Oracle Integration**
-   - Built-in support for decentralized oracles
-   - Allows contracts to access off-chain data securely
-
-### Advanced Features
-
-1. **Upgradeable Contracts**
+5. **Upgradeable Contracts**
    - Proxy patterns for upgradeability
    - Governed by on-chain voting mechanisms
 
-2. **Time-Lock Mechanisms**
+6. **Time-Lock Mechanisms**
    - Allows scheduling of contract actions
    - Useful for governance and automated processes
 
-3. **Meta-Transactions**
-   - Enables gasless transactions for better UX
-   - Costs can be subsidized by dApp developers
+## Interoperability Features
 
-Example of a Simple Smart Contract in Rust:
+1. **Oracle Integration**
+   - Built-in support for decentralized oracles
+   - Allows contracts to access off-chain data securely
+
+2. **Cross-Chain Interaction**
+   - Contracts can initiate and receive cross-chain transactions
+   - Utilizes the YY Protocol's bridge contracts
+
+## Security Measures
+
+1. **Formal Verification**
+   - Critical contracts undergo formal verification
+   - Mathematically proves the correctness of contract logic
+
+2. **Automated Auditing**
+   - Continuous automated audits using tools like Mythril and Slither
+   - Identifies common vulnerabilities and anti-patterns
+
+3. **Sandboxing**
+   - Contracts execute in isolated environments
+   - Prevents malicious contracts from affecting the broader system
+
+## Performance Optimizations
+
+1. **Parallel Execution**
+   - Non-conflicting transactions are executed in parallel
+   - Utilizes multi-core processors efficiently
+
+2. **Just-In-Time (JIT) Compilation**
+   - Frequently used contracts are JIT-compiled for faster execution
+   - Balances flexibility with performance
+
+3. **State Caching**
+   - Frequently accessed state is cached for quicker reads
+   - Improves performance for high-throughput contracts
+
+## Smart Contract Lifecycle
+
+```
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│  Contract   │      │   Contract  │      │   Contract  │
+│ Development │ ───▶ │ Compilation │ ───▶ │ Deployment  │
+└─────────────┘      └─────────────┘      └─────────────┘
+                                                 │
+                                                 ▼
+┌─────────────┐      ┌─────────────┐      ┌─────────────┐
+│   Contract  │      │   Contract  │      │   Contract  │
+│  Execution  │ ◀─── │ Verification│ ◀─── │   Storage   │
+└─────────────┘      └─────────────┘      └─────────────┘
+       │
+       │
+       ▼
+┌─────────────┐      ┌─────────────┐
+│   Event     │      │    State    │
+│  Emission   │      │   Updates   │
+└─────────────┘      └─────────────┘
+```
+
+## Example Smart Contract (in Rust)
+
 ```rust
 use proof_std::*;
 
@@ -772,86 +1099,121 @@ impl TokenContract {
 }
 ```
 
-This smart contract system provides developers with powerful tools to create complex decentralized applications while maintaining security and efficiency.
+This smart contract system provides developers with powerful tools to create complex decentralized applications while maintaining security and efficiency. By leveraging WebAssembly and advanced execution techniques, Proof Blockchain ensures high performance and flexibility in smart contract development and execution.
 
 ## 11. Network Topology
 
-Proof Blockchain's network topology is designed to ensure high performance, security,
-and decentralization. It is structured to support the three-layer architecture efficiently:
+Proof Blockchain's network topology is designed to ensure high performance, security, and decentralization. It is structured to support the three-layer architecture efficiently while providing robust connectivity and data propagation.
 
-### Node Types
+## Node Types
 
 1. **Full Nodes**
    - Store the complete blockchain history
    - Participate in transaction and block validation
    - Run on all three layers (ZZ, XX/YY, and ZK-Rollups)
+   - Serve as the backbone of the network
 
 2. **Light Nodes**
    - Store only block headers and a subset of transactions
    - Useful for resource-constrained devices
    - Can verify transactions using Merkle proofs
+   - Provide network access for end-users
 
 3. **Validator Nodes**
    - Special full nodes that participate in block production
    - Require staking of PROOF tokens
    - Run advanced hardware for efficient block production and validation
+   - Form the core of the consensus mechanism
 
 4. **ZK-Rollup Operators**
    - Specialized nodes that aggregate Layer 3 transactions
    - Generate zero-knowledge proofs for transaction batches
+   - Critical for the performance of Layer 3
 
-### Network Structure
+5. **Bridge Nodes**
+   - Facilitate cross-chain communication
+   - Maintain connections with other blockchain networks
+   - Crucial for interoperability features
+
+## Network Structure
 
 1. **Peer Discovery**
-   - Uses a DHT (Distributed Hash Table) for peer discovery
+   - Uses a Distributed Hash Table (DHT) for peer discovery
    - Kademlia-based protocol for efficient routing
+   - Ensures network resilience and self-organization
 
 2. **Connectivity**
    - Nodes maintain connections to multiple peers
    - Minimum Connections: 8
    - Maximum Connections: 125
+   - Ensures network stability and fault tolerance
 
 3. **Sharding**
    - Network is divided into shards on Layer 2
    - Each shard has its own sub-network of nodes
+   - Enables parallel processing and increased throughput
 
 4. **Cross-Shard Communication**
    - Dedicated nodes serve as bridges between shards
    - Use a gossip protocol for efficient message propagation
+   - Critical for maintaining global state consistency
 
-### Data Flow
+## Data Flow
 
 1. **Transaction Propagation**
    - Uses a gossip protocol with eager push and lazy pull
    - Bloom filters used to prevent redundant transmissions
+   - Ensures rapid dissemination of new transactions
 
 2. **Block Propagation**
    - Compact block relay to reduce bandwidth usage
    - Critical for maintaining network synchronization
+   - Enables quick validation and finality
 
 3. **State Sync**
    - Fast sync mechanism for new nodes joining the network
    - Snapshot-based sync for quick onboarding
+   - Ensures new nodes can participate quickly
 
-### Security Measures
+## Network Layers
+
+1. **Layer 1 (ZZ Protocol) Network**
+   - Focuses on security and legal contract management
+   - Fewer, more stable nodes with high uptime requirements
+   - Global connectivity for maximum security
+
+2. **Layer 2 (XX/YY Protocols) Network**
+   - Sharded network for high throughput
+   - Dense connectivity within shards, strategic connections between shards
+   - Balances performance and decentralization
+
+3. **Layer 3 (ZK-Rollups) Network**
+   - Specialized network for privacy-preserving transactions
+   - Concentrated around ZK-Rollup operators
+   - Optimized for batch processing and proof generation
+
+## Security Measures
 
 1. **Eclipse Attack Prevention**
    - IP address diversity requirements
    - Regular rotation of network connections
+   - Protects against network-level attacks
 
 2. **Sybil Attack Mitigation**
    - Proof of Stake makes it economically unfeasible to create many nodes
    - Reputation system for peer scoring
+   - Ensures the integrity of the network
 
 3. **DDoS Protection**
    - Rate limiting at the network edge
    - Blacklisting of malicious IPs
+   - Maintains network availability under attack
 
-### Network Diagram
+## Network Diagram
 
 ```
                    +-------------------+
-                   |   Internet        |
+                   |     Internet      |
                    +-------------------+
                             |
                  +----------+-----------+
@@ -873,9 +1235,17 @@ and decentralization. It is structured to support the three-layer architecture e
                  |   +----------------+  |
                  +---| Shard Networks |--+
                      +----------------+
+                             |
+                     +----------------+
+                     | Bridge Nodes   |
+                     +----------------+
+                             |
+              +--------------------------------+
+              |      Other Blockchains         |
+              +--------------------------------+
 ```
 
-This network topology ensures that Proof Blockchain can maintain high performance and security while supporting its multi-layered architecture.
+This network topology ensures that Proof Blockchain can maintain high performance and security while supporting its multi-layered architecture. The diversity of node types and the sharded structure allow for efficient data processing and propagation, while the security measures protect against various network-level attacks. This design provides a robust foundation for the decentralized applications and services built on Proof Blockchain.
 
 ## 12. Scalability and Performance
 
