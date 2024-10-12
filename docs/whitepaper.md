@@ -1,15 +1,16 @@
 # Proof Blockchain: Whitepaper
 
 ## Table of Contents
-1. [Introduction](#Introduction)
+s
+1. [Introduction](#introduction)
 2. [Overview of Three-Layer Architecture](#overview-of-three-layer-architecture)
 3. [Layer 1 (ZZ Protocol): The Foundation](#layer-1-zz-protocol-the-foundation)
 4. [Layer 2 (XX/YY Protocols): Performance and Scalability](#layer-2-xxyy-protocols-performance-and-scalability)
-5. [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#3.-Layer-1-(ZZ-Protocol):-The-Foundation)
+5. [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#layer-3-zk-rollups-ultra-fast-processing-and-privacy)
 6. [Cross-Layer Interactions](#cross-layer-interactions)
 7. [Data Management and Privacy](#data-management-and-privacy)
 8. [Security Measures](#security-measures)
-9. [Consensus Mechanism](#Consensus-Mechanism)
+9. [Consensus Mechanism](#consensus-mechanism)
 10. [Smart Contracts and Execution](#smart-contracts-and-execution)
 11. [Network Topology](#network-topology)
 12. [Scalability and Performance](#scalability-and-performance)
