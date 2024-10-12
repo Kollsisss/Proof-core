@@ -2,48 +2,24 @@
 
 ## Table of Contents
 
-## Table of Contents
-
-<ol>
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#overview-of-three-layer-architecture">Overview of Three-Layer Architecture</a></li>
-  <li><a href="#layer-1-zz-protocol">Layer 1 (ZZ Protocol): The Foundation</a></li>
-  <li><a href="#layer-2-xxyy-protocols">Layer 2 (XX/YY Protocols): Performance and Scalability</a></li>
-  <li><a href="#layer-3-zk-rollups">Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy</a></li>
-  <li><a href="#cross-layer-interactions">Cross-Layer Interactions</a></li>
-  <li><a href="#data-management-and-privacy">Data Management and Privacy</a></li>
-  <li><a href="#security-measures">Security Measures</a></li>
-  <li><a href="#consensus-mechanism">Consensus Mechanism</a></li>
-  <li><a href="#smart-contracts-and-execution">Smart Contracts and Execution</a></li>
-  <li><a href="#network-topology">Network Topology</a></li>
-  <li><a href="#scalability-and-performance">Scalability and Performance</a></li>
-  <li><a href="#interoperability">Interoperability</a></li>
-  <li><a href="#governance-and-upgrades">Governance and Upgrades</a></li>
-  <li><a href="#developer-tools-and-apis">Developer Tools and APIs</a></li>
-  <li><a href="#use-cases-and-examples">Use Cases and Examples</a></li>
-  <li><a href="#future-roadmap">Future Roadmap</a></li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ol>
-
-
-1. [Introduction](#introduction)
-2. [Overview of Three-Layer Architecture](#overview-of-three-layer-architecture)
-3. [Layer 1 (ZZ Protocol): The Foundation](#layer-1-zz-protocol-the-foundation)
-4. [Layer 2 (XX/YY Protocols): Performance and Scalability](#layer-2-xxyy-protocols-performance-and-scalability)
-5. [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#layer-3-zk-rollups-ultra-fast-processing-and-privacy)
-6. [Cross-Layer Interactions](#cross-layer-interactions)
-7. [Data Management and Privacy](#data-management-and-privacy)
-8. [Security Measures](#security-measures)
-9. [Consensus Mechanism](#consensus-mechanism)
-10. [Smart Contracts and Execution](#smart-contracts-and-execution)
-11. [Network Topology](#network-topology)
-12. [Scalability and Performance](#scalability-and-performance)
-13. [Interoperability](#interoperability)
-14. [Governance and Upgrades](#governance-and-upgrades)
-15. [Developer Tools and APIs](#developer-tools-and-apis)
-16. [Use Cases and Examples](#use-cases-and-examples)
-17. [Future Roadmap](#future-roadmap)
-18. [Conclusion](#conclusion)
+- [Introduction](#1-introduction)
+- [Overview of Three-Layer Architecture](#overview-of-three-layer-architecture)
+- [Layer 1 (ZZ Protocol): The Foundation](#layer-1-zz-protocol-the-foundation)
+- [Layer 2 (XX/YY Protocols): Performance and Scalability](#layer-2-xxyy-protocols-performance-and-scalability)
+- [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#layer-3-zk-rollups-ultra-fast-processing-and-privacy)
+- [Cross-Layer Interactions](#cross-layer-interactions)
+- [Data Management and Privacy](#data-management-and-privacy)
+- [Security Measures](#security-measures)
+- [Consensus Mechanism](#consensus-mechanism)
+- [Smart Contracts and Execution](#smart-contracts-and-execution)
+- [Network Topology](#network-topology)
+- [Scalability and Performance](#scalability-and-performance)
+- [Interoperability](#interoperability)
+- [Governance and Upgrades](#governance-and-upgrades)
+- [Developer Tools and APIs](#developer-tools-and-apis)
+- [Use Cases and Examples](#use-cases-and-examples)
+- [Future Roadmap](#future-roadmap)
+- [Conclusion](#conclusion)
 
 ## 1. Introduction
 
