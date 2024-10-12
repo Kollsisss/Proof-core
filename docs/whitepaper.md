@@ -5,7 +5,7 @@
 2. [Overview of Three-Layer Architecture](#overview-of-three-layer-architecture)
 3. [Layer 1 (ZZ Protocol): The Foundation](#layer-1-zz-protocol-the-foundation)
 4. [Layer 2 (XX/YY Protocols): Performance and Scalability](#layer-2-xxyy-protocols-performance-and-scalability)
-5. [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#3. Layer 1 (ZZ Protocol): The Foundation)
+5. [Layer 3 (ZK-Rollups): Ultra-Fast Processing and Privacy](#3.-Layer-1-(ZZ-Protocol):-The-Foundation)
 6. [Cross-Layer Interactions](#cross-layer-interactions)
 7. [Data Management and Privacy](#data-management-and-privacy)
 8. [Security Measures](#security-measures)
